@@ -1,0 +1,13 @@
+require 'selenium-webdriver'
+class BasePage
+  def initialize
+    @driver=driver
+  end
+
+  private
+  def driver
+    chromeDriver=Selenium::WebDriver.for :chrome
+    chromeDriver.manage.window.maximize
+    return chromeDriver
+  end
+end

@@ -1,0 +1,18 @@
+require '../base-page'
+class LoginPage < BasePage
+  def initialize
+    @browser = driver
+  end
+  def browser
+    return @browser
+  end
+  def username_textField
+    # return @browser
+  end
+  def password_textField
+    # return @browser
+  end
+  def login_button
+    # return @browser
+  end
+end

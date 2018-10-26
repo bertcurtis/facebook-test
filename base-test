@@ -1,0 +1,6 @@
+require 'selenium-webdriver'
+class BaseTest
+  def initialize(driver, url)
+    driver.navigate.to url
+  end
+end
