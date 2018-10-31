@@ -4,7 +4,7 @@ require '../pages/login-page'
 class LoginTest
   def initialize
     @loginPage = LoginPage.new
-    BaseTest.new(@loginPage.browser, "https://facebook.com/login")
+    @test=BaseTest.new(@loginPage.browser, "https://facebook.com")
   end
   def input_username_and_password
     @loginPage.username_textField.send_keys("bobLoblaw@lawblog.com")
@@ -17,4 +17,4 @@ class LoginTest
   end
 end
 
-LoginTest.new.input_username_and_password.click_submit
+@test.run( LoginTest.new.input_username_and_password.click_submit, @loginPage.browser )

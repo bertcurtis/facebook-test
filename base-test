@@ -1,6 +1,23 @@
 require 'selenium-webdriver'
+require 'date'
 class BaseTest
   def initialize(driver, url)
     driver.navigate.to url
+    @retryCount=0
+  end
+
+  def run(test, driver)
+    begin
+      test
+    rescue
+      if(@retryCount>1)
+        driver.save_screenshot(test.name + '_' + DateTime.now + '.png')
+        driver.quit
+      else
+        @retryCount++
+        driver.quit
+        retry
+      end
+    end
   end
 end

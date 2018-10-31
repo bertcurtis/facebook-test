@@ -7,12 +7,12 @@ class LoginPage < BasePage
     return @browser
   end
   def username_textField
-    # return @browser
+    @browser.find_element(:id,'login')
   end
   def password_textField
-    # return @browser
+    @browser.find_element(:id,'password')
   end
   def login_button
-    # return @browser
+    @browser.find_element(:id,'loginbutton')
   end
 end
